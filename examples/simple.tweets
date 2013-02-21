@@ -1,2 +1,2 @@
-{'t':u'i am a tweet', 'r':[u'i', 'am', 'a', 'tweet']}
-{'t':u'i    am\na\t tweet', 'r':[u'i', u'am', u'a', u'tweet']}
+{"t":"i am a tweet", "r":["i", "am", "a", "tweet"]}
+{"t":"i    am\na\t tweet", "r":["i", "am", "a", "tweet"]}

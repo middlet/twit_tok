@@ -4,27 +4,31 @@
 tests for the parser
 """
 
+import json
 import unittest
-from parser import Parse
+from tokenise import Tokenise
 
-class TestParser(unittest.TestCase):
+class TestTokenise(unittest.TestCase):
     
     def setUp(self):
-        self.parse = Parse()
-    
-    def test_simple(self):
-        """
-        very easy to parse tweets
-        basic handling of the texts. all made up tweets
-        """        
-        for ti in open('examples/simple.txt', 'r'):
-            j = json.loads(ti)
-            self.assertEqual(self.parse.parse_tweet(j['t']), j['r'])
-        
-    
+        self.tok = Tokenise()
 
+
+def test_generator(a,b):
+    def test(self):
+        self.assertEqual(self.tok.tokenise(a), b)
+    return test
 
 
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(TestParser)
+    # generate tests directly from file
+    lineno = 1
+    for line in open('./examples/simple.tweets', 'r'):
+        j = json.loads(line)
+        test_name = 'test_simple_%d'%lineno
+        test = test_generator(j['t'], j['r']) 
+        setattr(TestTokenise, test_name, test)
+        lineno += 1
+
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestTokenise)
     unittest.TextTestRunner(verbosity=2).run(suite)
