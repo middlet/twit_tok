@@ -24,11 +24,16 @@ if __name__ == '__main__':
     # generate tests directly from file
     lineno = 1
     for line in open('./examples/simple.tweets', 'r'):
-        j = json.loads(line)
-        test_name = 'test_simple_%d'%lineno
-        test = test_generator(j['t'], j['r']) 
-        setattr(TestTokenise, test_name, test)
-        lineno += 1
-
-    suite = unittest.TestLoader().loadTestsFromTestCase(TestTokenise)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+        if line: 
+            try:
+                j = json.loads(line)
+                test_name = 'test_simple_%d'%lineno
+                test = test_generator(j['t'], j['r']) 
+                setattr(TestTokenise, test_name, test)
+            except: # error in json
+                print 'error : ', line
+            lineno += 1
+    # run tests
+    unittest.main()
+    #suite = unittest.TestLoader().loadTestsFromTestCase(TestTokenise)
+    #unittest.TextTestRunner(verbosity=2).run(suite)
