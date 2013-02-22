@@ -5,4 +5,3 @@
 {"t":"i am a: tweet", "r":["i", "am", "a", ":", "tweet"]}
 {"t":"i'm a: tweet", "r":["i'm", "a", ":", "tweet"]}
 {"t":"i'm a tweet http://www.twitter.com/", "r":["i'm", "a", "tweet", "http://www.twitter.com/"]}
-
