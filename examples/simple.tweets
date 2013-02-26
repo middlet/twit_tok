@@ -16,3 +16,5 @@
 {"t":"i--> tweets", "r":["i", "-->", "tweets"]}
 {"t":"i am from U.N.C.L.E", "r":["i", "am", "from", "U.N.C.L.E"]}
 {"t":"i am from U.S.A.", "r":["i", "am", "from", "U.S.A."]}
+{"t":"@friend i am from twizel", "r":["@friend", "i", "am", "from", "twizel"]}
+{"t":"#friend i am from twizel #woot", "r":["#friend", "i", "am", "from", "twizel", "#woot"]}

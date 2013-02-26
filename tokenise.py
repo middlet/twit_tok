@@ -25,11 +25,16 @@ class Tokenise:
     APOSWORD = r"""[^\s.,?"]+['’′][^\s.,?"]*"""
     HEARTS = r"""(?:<+/?3+)+"""
     ARROWS = r"""(?:<*[-―—=]*>+|<+[-―—=]*>*)"""
-    ABBREV = "([A-Za-z](\.[A-Za-z])+\.?)"
+    ABBREV = r"""([A-Za-z](\.[A-Za-z])+\.?)"""
+    SEPS = r"""(?:--+|―|—|~|–|=)"""
+    DECORATIONS = r"""(?:[♫♪]+|[★☆]+|[♥❤♡]+)"""
+    HASHTAG = r"""#[a-zA-Z0-9_]+"""
+    ATMENTION = r"""@[a-zA-Z0-9_]+"""
     
     REGEX = '('+HEARTS+'|'+URLS+'|'+EMAIL+'|'+TIME+'|'+NUMS+'|'+ \
         SM_RIGHT+'|'+SM_LEFT+'|'+ARROWS+'|'+ENT+'|'+PUNC+'|'+ \
-        ABBREV + ')'
+        ABBREV+'|'+SEPS+'|'+DECORATIONS+'|'+APOSWORD+')'#'|'+ \
+        #HASHTAG+'|'+ATMENTION+')'
     
     EP_LEFT_RE = re.compile(r"""(\s|^)(%s+)(%s)""" % (EP, NOT_EP))
     EP_RIGHT_RE = re.compile(r"""(%s)(%s+)(\s|$)""" % (NOT_EP, EP))
