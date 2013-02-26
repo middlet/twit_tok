@@ -5,3 +5,14 @@
 {"t":"i am a: tweet", "r":["i", "am", "a", ":", "tweet"]}
 {"t":"i'm a: tweet", "r":["i'm", "a", ":", "tweet"]}
 {"t":"i'm a tweet http://www.twitter.com/", "r":["i'm", "a", "tweet", "http://www.twitter.com/"]}
+{"t":"i am a tweet@twitter.com", "r":["i", "am", "a", "tweet@twitter.com"]}
+{"t":"i xyz_53@email_address.co.nz am a tweet", "r":["i", "xyz_53@email_address.co.nz", "am", "a", "tweet"]}
+{"t":"i am time 16:53:02", "r":["i", "am", "time", "16:53:02"]}
+{"t":"i am time 16:53 now", "r":["i", "am", "time", "16:53", "now"]}
+{"t":"i am number 1,53 now", "r":["i", "am", "number", "1,53", "now"]}
+{"t":"the tweet costs £1.53 $3.67 a 53% increase", "r":["the", "tweet", "costs", "£1.53", "$3.67", "a", "53%", "increase"]}
+{"t":"i am &gt; tweet", "r":["i", "am", "&gt;", "tweet"]}
+{"t":"i <3 tweets", "r":["i", "<3", "tweets"]}
+{"t":"i--> tweets", "r":["i", "-->", "tweets"]}
+{"t":"i am from U.N.C.L.E", "r":["i", "am", "from", "U.N.C.L.E"]}
+{"t":"i am from U.S.A.", "r":["i", "am", "from", "U.S.A."]}
