@@ -36,7 +36,7 @@ def create_tests(fname):
 
 if __name__ == '__main__':
     # generate tests directly from file
-    files = ['urls.tweets']
+    files = ['simple.tweets', ]#'urls.tweets']
     for fi in files:
         create_tests(fi)
     # run tests
