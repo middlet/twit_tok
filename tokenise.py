@@ -17,10 +17,10 @@ class Tokenise:
     ENT = r"""&(?:amp|lt|gt|quot);"""
     SM_LEFT = r"""([:=]|[;])(|o|O|-)([pP]|[doO]|[D\)\]]|[\(\[])"""
     SM_RIGHT = r"""([pP]|[doO]|[\)\]]|[\(\[])(|o|O|-)([:=]|[;])"""
-    URLS = r"""(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))"""    
+    URLS = r"""(?i)\b((?:[a-z][\w-]+:/{1,3}|[a-z0-9%]|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))"""    
     EMAIL = r"""\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.\-_]+[A-Za-z]{2,4}\b"""
     TIME = r"""\d+(?::\d+){1,2}"""
-    NUMS = r"""[\$€£¥]?\d+(?:[,.]\d*)*%?"""
+    NUMS = r"""\b[\$€£¥]?\d+([,.]?\d+)%?"""
     PUNC = r"""['"“”‘’]+|[.?!,…]+|[:;]+"""
     APOSWORD = r"""[^\s.,?"]+['’′][^\s.,?"]*"""
     HEARTS = r"""(?:<+/?3+)+"""
@@ -29,12 +29,12 @@ class Tokenise:
     SEPS = r"""(?:--+|―|—|~|–|=)"""
     DECORATIONS = r"""(?:[♫♪]+|[★☆]+|[♥❤♡]+)"""
     HASHTAG = r"""#[a-zA-Z0-9_]+"""
-    ATMENTION = r"""@[a-zA-Z0-9_]+"""
+    ATMENTION = r"""@[a-zA-Z0-9_]+('s)?"""
     
     REGEX = '('+HEARTS+'|'+URLS+'|'+EMAIL+'|'+TIME+'|'+NUMS+'|'+ \
         SM_RIGHT+'|'+SM_LEFT+'|'+ARROWS+'|'+ENT+'|'+PUNC+'|'+ \
-        ABBREV+'|'+SEPS+'|'+DECORATIONS+'|'+APOSWORD+')'#'|'+ \
-        #HASHTAG+'|'+ATMENTION+')'
+        ABBREV+'|'+SEPS+'|'+DECORATIONS+'|'+APOSWORD+'|'+ \
+        HASHTAG+'|'+ATMENTION+')'
     
     EP_LEFT_RE = re.compile(r"""(\s|^)(%s+)(%s)""" % (EP, NOT_EP))
     EP_RIGHT_RE = re.compile(r"""(%s)(%s+)(\s|$)""" % (NOT_EP, EP))

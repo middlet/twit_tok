@@ -18,3 +18,4 @@
 {"t":"i am from U.S.A.", "r":["i", "am", "from", "U.S.A."]}
 {"t":"@friend i am from twizel", "r":["@friend", "i", "am", "from", "twizel"]}
 {"t":"#friend i am from twizel #woot", "r":["#friend", "i", "am", "from", "twizel", "#woot"]}
+{"t":"link http:// ...", "r":["link", "http://", "..."]}
